@@ -117,7 +117,6 @@ private:
                     if (colIndex >= dataRow.size())
                     {
                         element.emplace(__headerVector__[colIndex], " ");
-
                     }
                     else
                     {
@@ -146,12 +145,21 @@ public:
         __csvDataMap__ = __getcsvData__();
     }
 
-    void csvHeaders()
+    vector<string> getcsvHeaders()
     {
-        for (int index = 0; index < __headerVector__.size(); index++)
-        {
-            cout << __headerVector__[index] << " ";
-        }
+        return __headerVector__;
+    }
+
+    map<int, map<string, string>> getcsvData()
+    {
+        return __csvDataMap__;
+    }
+
+    vector<int> getcsvDataSize(){
+        vector<int> size[2];
+        size[0] = __r__;
+        size[1] = __c__;
+        return size;
     }
 
     void print_csvData()
